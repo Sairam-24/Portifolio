@@ -1,0 +1,26 @@
+# dependencies
+node_modules
+
+# build output
+dist
+dist-ssr
+*.tsbuildinfo
+
+# local env (copy .env.example to .env.local)
+.env
+.env.local
+.env.*.local
+
+# logs and OS/editor noise
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.idea
+.vscode/*
+!.vscode/extensions.json
+.wrangler
+.vercel
+
+# your private list of terms that must never appear on the site (copy from the .example file)
+scripts/confidential-terms.txt

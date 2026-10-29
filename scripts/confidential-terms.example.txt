@@ -1,0 +1,15 @@
+# Copy this file to scripts/confidential-terms.txt and fill it in.
+#
+# List words that must NEVER appear anywhere on the public site, one per line
+# (case-insensitive): your employer's name, client names, internal product or
+# project code names, internal tool names, customer-specific terms.
+#
+# `npm run check:publish` searches src/, index.html and public/ for each term
+# and fails if it finds one.
+#
+# scripts/confidential-terms.txt is listed in .gitignore on purpose, so the names
+# you put in it are not pushed to GitHub with the rest of the repository.
+#
+# Example lines (remove the leading # and replace):
+# Acme Corp
+# ProjectNightingale

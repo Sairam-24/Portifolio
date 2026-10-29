@@ -1,0 +1,318 @@
+/* Stop the page scrolling behind an open case study. */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+.cs-dialog {
+  width: min(1040px, 100% - 24px);
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 22px;
+  background: var(--bg-raised);
+  color: var(--text);
+  box-shadow:
+    0 0 0 1px rgba(91, 140, 255, 0.08),
+    0 40px 120px -20px rgba(0, 0, 0, 0.85),
+    0 0 80px -30px rgba(91, 140, 255, 0.5);
+  overflow: hidden;
+}
+
+.cs-dialog[open] {
+  animation: cs-in 0.35s var(--ease);
+}
+
+.cs-dialog::backdrop {
+  background: rgba(2, 4, 14, 0.78);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+@keyframes cs-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+}
+
+.cs {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 32px);
+}
+
+.cs__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1.1rem, 3vw, 1.75rem) clamp(1.1rem, 3vw, 2rem);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(100deg, rgba(34, 211, 238, 0.06), rgba(154, 123, 255, 0.06));
+}
+
+.cs__kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.cs__title {
+  margin-top: 0.4rem;
+  font-size: clamp(1.4rem, 3.4vw, 2.2rem);
+  letter-spacing: -0.035em;
+}
+
+.cs__close {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
+.cs__close:hover {
+  border-color: rgba(34, 211, 238, 0.6);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.cs__scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  align-content: start;
+  gap: clamp(1.75rem, 4vw, 2.5rem);
+  padding: clamp(1.1rem, 3vw, 2rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.cs__notice {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(154, 123, 255, 0.35);
+  border-radius: var(--radius);
+  background: rgba(154, 123, 255, 0.08);
+  font-size: 0.86rem;
+  color: var(--text-2);
+}
+
+.cs__notice svg {
+  flex: none;
+  margin-top: 0.1rem;
+  color: #c3b2ff;
+}
+
+.cs__h {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.cs__p {
+  max-width: 62ch;
+  color: var(--text-2);
+}
+
+.cs__p + .cs__p {
+  margin-top: 0.9rem;
+}
+
+.cs__steps {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.cs__step {
+  display: flex;
+  gap: 1rem;
+}
+
+.cs__step-num {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  background: rgba(91, 140, 255, 0.12);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--cyan);
+}
+
+.cs__step h4 {
+  font-size: 1.02rem;
+}
+
+.cs__step p {
+  max-width: 64ch;
+  margin-top: 0.3rem;
+  font-size: 0.94rem;
+  color: var(--text-2);
+}
+
+.cs__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.cs__cards li {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.9rem;
+  color: var(--text-2);
+}
+
+.cs__cards strong {
+  color: var(--text);
+  font-weight: 580;
+}
+
+.cs__split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.cs__col {
+  padding: 1.25rem 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.cs__col--mine {
+  border-color: rgba(34, 211, 238, 0.4);
+  background: rgba(34, 211, 238, 0.05);
+}
+
+.cs__col ul,
+.cs__ticks {
+  display: grid;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--text-2);
+}
+
+.cs__col li,
+.cs__ticks li {
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.cs__col li::before,
+.cs__ticks li::before {
+  content: '';
+  position: absolute;
+  left: 0.1rem;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  transform: rotate(45deg);
+}
+
+.cs__metrics {
+  display: grid;
+  gap: 1rem;
+}
+
+.cs__caveat {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-left: 2px solid var(--amber);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: rgba(251, 191, 36, 0.06);
+  font-size: 0.88rem;
+  color: var(--text-2);
+}
+
+.cs__pager {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.cs__pager button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 44px;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.03);
+  text-align: left;
+  font-weight: 560;
+  line-height: 1.3;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.cs__pager button:hover {
+  border-color: rgba(34, 211, 238, 0.55);
+  background: rgba(34, 211, 238, 0.06);
+}
+
+.cs__pager small {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.cs__pager-next {
+  justify-content: space-between;
+  text-align: right !important;
+}
+
+@media (max-width: 719px) {
+  .cs-dialog {
+    width: 100%;
+    max-height: 100dvh;
+    height: 100dvh;
+    border-radius: 0;
+    border-inline: 0;
+  }
+
+  .cs {
+    max-height: 100dvh;
+    height: 100%;
+  }
+
+  .cs__cards,
+  .cs__split,
+  .cs__pager {
+    grid-template-columns: 1fr;
+  }
+}

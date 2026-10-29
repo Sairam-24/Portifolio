@@ -1,0 +1,101 @@
+:root {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --bg: #050816;
+  --bg-raised: #0a1124;
+  --panel: #0b1328;
+  --surface: rgba(255, 255, 255, 0.035);
+  --surface-hover: rgba(255, 255, 255, 0.07);
+
+  /* Lines */
+  --border: rgba(140, 160, 255, 0.16);
+  --border-strong: rgba(140, 170, 255, 0.3);
+
+  /* Text. All pass WCAG AA (4.5:1) on --bg. */
+  --text: #e9edf9;
+  --text-2: #b6c0dd;
+  --text-3: #8f9bc0;
+
+  /* Accents */
+  --cyan: #22d3ee;
+  --blue: #5b8cff;
+  --violet: #9a7bff;
+  --green: #34d399;
+  --amber: #fbbf24; /* reserved for "placeholder, needs your input" */
+  --grad: linear-gradient(110deg, var(--cyan), var(--blue) 52%, var(--violet));
+
+  /* Type */
+  --font-sans: 'Geist Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace;
+
+  /* Shape and layout */
+  --radius: 14px;
+  --radius-lg: 20px;
+  --container: 1160px;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --header-h: 68px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Surfaces */
+  --bg: #f8fafc;
+  --bg-raised: #f1f5f9;
+  --panel: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+
+  /* Lines */
+  --border: rgba(15, 23, 42, 0.14);
+  --border-strong: rgba(15, 23, 42, 0.24);
+
+  /* High-Contrast Crisp Text Tokens (WCAG AAA) */
+  --text: #020617;        /* Headlines, card titles, key numbers: 19:1 contrast */
+  --text-2: #0f172a;      /* Body copy, descriptions, subheadings: 15:1 contrast */
+  --text-3: #1e293b;      /* Labels, timestamps, secondary meta: 11:1 contrast */
+
+  /* Deep Vibrant Accents */
+  --cyan: #0284c7;
+  --blue: #1d4ed8;
+  --violet: #6d28d9;
+  --green: #047857;
+  --amber: #b45309;
+  --grad: linear-gradient(110deg, #0284c7, #1d4ed8 52%, #6d28d9);
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+
+.theme-toggle:hover {
+  background: var(--surface-hover);
+  border-color: var(--cyan);
+  transform: scale(1.06);
+}
+
+.theme-icon--sun {
+  color: #f59e0b;
+}
+
+.theme-icon--moon {
+  color: #6366f1;
+}

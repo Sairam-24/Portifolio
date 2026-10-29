@@ -1,0 +1,71 @@
+<!doctype html>
+<!--
+  Source for public/og-image.png (1200x630). Edit the text, then re-export:
+    msedge --headless=new --screenshot=public/og-image.png --window-size=1200,630 design/og-image.html
+  (Chrome works the same way.) Any screenshot tool at exactly 1200x630 is fine too.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: 'Geist';
+        src: url('../node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2') format('woff2');
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: 'Geist Mono';
+        src: url('../node_modules/@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2') format('woff2');
+        font-weight: 100 900;
+      }
+      * { box-sizing: border-box; margin: 0; }
+      html, body { width: 1200px; height: 630px; overflow: hidden; background: #050816; }
+      body {
+        position: relative;
+        font-family: 'Geist', system-ui, sans-serif;
+        color: #e9edf9;
+        background:
+          radial-gradient(760px 520px at 88% -10%, rgba(91, 140, 255, 0.34), transparent 62%),
+          radial-gradient(640px 460px at 0% 12%, rgba(34, 211, 238, 0.17), transparent 62%),
+          radial-gradient(640px 520px at 78% 112%, rgba(154, 123, 255, 0.24), transparent 62%),
+          #050816;
+      }
+      .grid {
+        position: absolute; inset: 0;
+        background-image:
+          linear-gradient(rgba(140, 165, 255, 0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(140, 165, 255, 0.07) 1px, transparent 1px);
+        background-size: 64px 64px;
+        -webkit-mask-image: radial-gradient(ellipse 90% 80% at 30% 20%, #000 10%, transparent 75%);
+      }
+      .wrap { position: relative; padding: 76px 80px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+      .mark {
+        width: 76px; height: 76px; border-radius: 20px; display: grid; place-items: center;
+        font-weight: 700; font-size: 31px; letter-spacing: -1px; color: #d6ebff;
+        border: 3px solid transparent;
+        background: linear-gradient(#0a1130, #0a1130) padding-box, linear-gradient(120deg, #22d3ee, #5b8cff 55%, #9a7bff) border-box;
+      }
+      .status { font-family: 'Geist Mono', monospace; font-size: 22px; color: #c4f3ff; letter-spacing: 0.02em; }
+      .status i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #22d3ee; margin-right: 14px; box-shadow: 0 0 16px #22d3ee; }
+      h1 { font-size: 104px; line-height: 1.02; font-weight: 640; letter-spacing: -4px; margin-top: 18px; }
+      h1 span { background: linear-gradient(110deg, #22d3ee, #5b8cff 52%, #9a7bff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      .name { font-size: 40px; font-weight: 560; letter-spacing: -1px; }
+      .meta { font-family: 'Geist Mono', monospace; font-size: 23px; color: #8f9bc0; margin-top: 10px; }
+      .row { display: flex; justify-content: space-between; align-items: flex-end; }
+    </style>
+  </head>
+  <body>
+    <div class="grid"></div>
+    <div class="wrap">
+      <div class="row">
+        <div class="mark">SP</div>
+        <div class="status"><i></i>Open to AI engineering roles</div>
+      </div>
+      <h1>Building AI that solves <span>real problems.</span></h1>
+      <div>
+        <div class="name">SaiBabu Polisetti</div>
+        <div class="meta">Senior AI Engineer · Hyderabad, India · LLMs · RAG · Computer vision</div>
+      </div>
+    </div>
+  </body>
+</html>

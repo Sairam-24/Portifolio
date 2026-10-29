@@ -1,0 +1,10 @@
+// Cloudflare Workers static-assets configuration. Only used if you deploy to
+// Cloudflare (see README.md, "Deploy"); every other host ignores this file.
+// Change "name" to the project name you want (it becomes <name>.<subdomain>.workers.dev).
+{
+  "name": "saibabu-portfolio",
+  "compatibility_date": "2026-10-25",
+  "assets": {
+    "directory": "./dist"
+  }
+}
